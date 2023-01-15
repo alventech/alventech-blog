@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: 'Azure Migrate <3 GDPR'
 author: Stein-Erik Alvestad
 date: 2019-03-10T21:35:21+00:00
@@ -6,12 +7,21 @@ url: /azure-migrate/
 categories:
   - Azure
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 ---
 
 
 I have been following the development of Azure Migrate since my first trip to Ignite in 2017,&nbsp;and have been looking forward to getting this to EU regions, but I have been waiting with patience 🙂 
 
-<iframe src="https://giphy.com/embed/xf20D8HzvTQzu" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/xf20D8HzvTQzu">via GIPHY</a></p>
+![wait](https://media.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif)
 
 The first time I thought Microsoft was to release Azure Migrate for EU Regions, was back in TechSummit in Paris, March 2018. The release would have been a perfect fit since Microsoft was going to release new Azure data center France regions. 
 
