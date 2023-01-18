@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: Gearing up for Azure AD Connect cloud provisioning
 author: Stein-Erik Alvestad
 type: post
@@ -8,9 +9,19 @@ categories:
   - AAD
   - AD Connect
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
+
 ---
 
-{{< figure src="./AzureAD_Start_gearingup-1024x768.png" title="Lighthouse (figure)" >}}
+{{< figure src="/images/AzureAD_Start_gearingup-1024x768.png" title="Lighthouse (figure)" >}}
 
 
 ![image](/AzureAD_Start_gearingup-1024x768.png)

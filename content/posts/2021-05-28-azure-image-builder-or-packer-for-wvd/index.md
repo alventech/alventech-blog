@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: Azure Image Builder or Packer for Azure Virtual Desktop
 author: Stein-Erik Alvestad
 type: post
@@ -11,6 +12,15 @@ categories:
   - packer
   - WVD
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 ---
 
 ![image](/wp-content/uploads/2021/05/start_bob_builder.png

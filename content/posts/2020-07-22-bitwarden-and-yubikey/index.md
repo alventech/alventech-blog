@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: Bitwarden and Yubikey
 author: Stein-Erik Alvestad
 date: 2020-07-22T09:16:42+00:00
@@ -10,6 +11,16 @@ tags:
   - Bitwarden
   - NFC Yubikey
   - Yubikey
+
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 
 ---
 

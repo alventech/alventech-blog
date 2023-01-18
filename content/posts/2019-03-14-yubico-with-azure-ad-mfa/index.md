@@ -19,7 +19,7 @@ toc:
 
 ---
 
-
+### Introduction 
 
 Yubikey 5C and Yubikey NFC
 
@@ -33,7 +33,7 @@ Quick FAQs Yubikeys with Azure MFA
 
 Configure Azure MFA for OATH hardware tokens (public preview) 
 
-### Quick_FAQs_Yubikeys_with_Azure_MFA
+### Quick FAQs - Yubikeys with Azure MFA
 
   * Only public preview for AAD
   * Works with Azure cloud MFA even though it&#8217;s in Azure MFA settings of the AAD portal. 
@@ -46,63 +46,70 @@ Configure Azure MFA for OATH hardware tokens (public preview)
 
 Azure tenant with AAD Premium
   * MFA already enabled
-  * Have at Least 1 Yubikey. For the purpose of this guide, I&#8217;m using a [Yu][1][[bikey 5C][1]][1]  [][1]
+  * Have at Least 1 Yubikey. For the purpose of this guide, I&#8217;m using a Yubikey 5C
   * Yubico Manager Command (to extract Yubikey Serial number)
   * Yubico Authenticator 
 
-###  Configure Yubikey
+### Step 1 - Configure Yubikey
 
   
 **Download and install** ( Windows 10, MacOs or Linux)  
 
-  * [**Yubico Manager Command**][2] 
-  * [**Yubico Authenticator**][3] 
+  * [**Yubico Manager Command** 
+  * [**Yubico Authenticator** 
 
 Start the Yubico Manager Command from terminal/powershell.  
 
 **To get the Serial Number of YubiKeys.** Use command 
 
+```powershell
 .\**ykman**.exe List 
+```
 
 **To link TOTP key for Yubikey**. Use command  
 
-
+```powershell
 .\**ykman**.exe **oath** **add** UPN@<**tenant** name>onmicrosoft.com 
+```
 
 Next step requires you to add a Base32 Key.  
 Use OpenSSL to create a Base32 key.  
 Use to generate Base32 key if you have OpenSSL on your pc.  
 
-Copy your Base32 Key to after you have run the \**ykman**.exe command
+Copy your Base32 Key to after you have run the command below
 
+```powershell
+\**ykman**.exe command
+```
 
 ![Image](/wp-content/uploads/2019/03/y_Windows-PowerShell.png)
 
-### Step 2) Configure Azure MFA
+### Step 2 - Configure Azure MFA
 
 Go to the AAD portal and go to MFA server. In settings go to OATH Tokens. Choose Upload CSV to Azure.  
   
 The CSV has to be in a specific format like the example below  
   
+```
 upn,serial number,secret key,timeinterval,manufacturer,model  
-UPN@.onmicrosoft.com,1234567, 1234567890abcdef1234567890abcdef,30,YubiKey,HardwareKey  
+UPN@.omicrosoft.com,1234567, 1234567890abcdef1234567890abcdef,30,YubiKey,HardwareKey  
+```
 
-![Image](./OATH-tokens-Upload.png)
+![Image](/wp-content/uploads/2019/03/OATH-tokens-Upload.png)
 
 
 After the Upload has successfully completed, go to the refresh button.  
 Choose Activate. 
 
-![Image](./OATH-tokens-Activate-AzureAD.png)
+![Image](/wp-content/uploads/2019/03/OATH-tokens-Activate-AzureAD.png)
 
 Verify that the YubiKey is Activiated in the dashboard.
 
-![Image](./
-OATH-tokens-Activatevated-AzureAD-1024x274.png)
+![Image](/wp-content/uploads/2019/03/OATH-tokens-Activatevated-AzureAD-1024x274.png)
 
 
 
-### Step_3_Configure_MFA_settings_on_the_User
+### Step 3 - Configure MFA settings on the User
 
 Go to https://aka.ms/mfasetup with the user who has been assigned the YubiKey. In the settings, change the preferred auth Options to Use verification code from 
 
@@ -111,17 +118,14 @@ You can see that the user has already been assigned the Yubikey token. Enter the
 Autenticator on your pc.  
 
 
-![Image](./
-add_sec-550x578.png)
+![Image](/wp-content/uploads/2019/03/add_sec-550x578.png)
 
 
 Logout from MFA portal. Start a new login to portal.office.com  
 you will now see that you will get prompted with autenticator
 (Yubikey must be plugged in to get OTP) and verify that is works.
 
-![Image](./
-YubiSigning.png
-)
+![Image](/wp-content/uploads/2019/03/YubiSigning.png)
 
 
 ### Summary

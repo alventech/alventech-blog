@@ -1,12 +1,21 @@
 ---
+weigth: 1
 title: Azure Virtual Desktop Published Application and Scaling issues with DPI
 author: Stein-Erik Alvestad
-type: post
 date: 2021-07-21T10:44:20+00:00
 url: /azure-virtual-desktop-published-application-and-scaling-issues-with-dpi/
 categories:
   - Azure Virtual Desktop
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 ---
 
 ![image](/wp-content/uploads/2021/07/michael-maasen-AkYGy_ymFqo-unsplash-1024x660.jpg)
@@ -15,8 +24,14 @@ categories:
 
 ### Introduction
 
-    To scale or not to scale, thats todays question with Azure Virtual Desktop
 
+{{< admonition type=quote title="To scale or not to scale, thats todays question with Azure Virtual Desktop" open=true >}}
+{{< /admonition >}}
+    
+
+{{< script >}}
+console.log('Hello LoveIt!');
+{{< /script >}}
 
 Lately, I have had a compelling problem with Azure Virtual Desktop where a customer had problems with scaling a Line of business application (LOB) as a published application. Text, icons, and fonts became blurry, especially for users who only used laptops as the primary screen, and changing back and forth between primary and secondary screens with different resolutions & screen scaling. 
 

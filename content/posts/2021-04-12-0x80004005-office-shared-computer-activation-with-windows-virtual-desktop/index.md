@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: 0x80004005 office shared computer activation with Windows Virtual Desktop
 author: Stein-Erik Alvestad
 date: 2021-04-12T11:04:33+00:00
@@ -7,6 +8,15 @@ categories:
   - Office
   - WVD
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 ---
 
 ### Introduction

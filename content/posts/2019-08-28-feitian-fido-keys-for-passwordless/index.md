@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: FEITIAN FIDO Keys for Passwordless
 author: Stein-Erik Alvestad
 date: 2019-08-28T20:57:50+00:00
@@ -7,6 +8,16 @@ categories:
   - AAD
   - Feitian
   - Passwordless
+  
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 
 ---
 

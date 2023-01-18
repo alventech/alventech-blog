@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: Windows Virtual Desktop with ARM and Azure DevOps
 author: Stein-Erik Alvestad
 date: 2020-10-20T15:36:12+00:00
@@ -9,6 +10,15 @@ categories:
   - WVD
   - Azure Virtual Desktop
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 ---
 
 ### Introduction
@@ -259,13 +269,11 @@ Spaces in DevOps task Varaible with * https://gist.github.com/alventech/a80d1c5b
 **Update** 02.06.2021 (thnx to one of my readers Ben! We found that I had a bug with spaces in the Gist Github file!) this file has been updated so that the variable with ExpirationTime will be correct ). If you copied the code prior to 02.06.2021 the variable would cause a space to be generated which could cause some issues with the parameter input.  
 I&#8217;ve also updated the task.setvariable that was wrong in github and gist github.
 
-
-
 ### Summary
 
 It was a nice learning curve to configure WVD ARM templates with DevOps. What I like about Azure DevOps with the ARM templates, is that it gives additional security, and flexibility and scalability when you need to do deploy across multiple environments. You can export your templates, so it&#8217;s more repeatable in your CI/CD environments. With the override parameters is quick and easy to change parameters at your needs. 
 
-### <span class="ez-toc-section" id="Documentation"></span>**Documentation:** <span class="ez-toc-section-end"></span> {.wp-block-heading}
+### Documentation
 
 <a href="https://docs.microsoft.com/en-us/powershell/module/az.desktopvirtualization/new-azwvdhostpool?view=azps-4.8.0" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/powershell/module/az.desktopvirtualization/new-azwvdhostpool?view=azps-4.8.0</a>
 

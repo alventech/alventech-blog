@@ -12,31 +12,36 @@ categories:
 
 I was working with a use case on adding multi-value attributes for dynamic groups in Azure AD. I started off looking for on-prem AD attributes we could use for the multi-value string. To find these attributes I start PowerShell to get the AD Schema loaded. 
 
-```Command
+```powershell
 $schema =[DirectoryServices.ActiveDirectory.ActiveDirectorySchema]::GetCurrentSchema
 ```
+
 
 ![image](image.png)
 
 Next step was to add which optional attributes (muli-value) that I could use for testing. To filter the attributes I use the Powershell command below.
 
-```
+```powershell
 $schema.FindClass("user").optionalproperties | Out-GridView
 ```
 I set filter is, IsSingleValued (multi-value) to False. Just as part of the demo I selected URL as the attribute.
+
+
+
 
 ![image](image-1.png)
 
 I added values to the URL attribute and changed AD Connect Directory extensions attributes and on AD Connect I start deltasync with 
 
-```
+```powershell
 Start-ADSyncSyncCycle -PolicyType Delta 
 ```
 
 When looking into the AD Connect Metaverse Connectors I could see that the changed was applied and attribute was added, but AAD did not show any changes. I first verified that the AzureADApplicationExtensionProperty actually had synced to AAD and I could confirm this was added with the AAD Powershell command below.  
 
 
-```Get-AzureADApplication | 
+```powershell
+Get-AzureADApplication | 
 Get-AzureADApplicationExtensionProperty
 ```
 
@@ -45,7 +50,7 @@ Get-AzureADApplicationExtensionProperty
 To verify the values on the User object I checked the AAD extension property with the AAD PowerShell command below.  
 
 
-```
+```powershell
 Get-AzureADUser -ObjectId $UserId | Select -ExpandProperty ExtensionProperty
 ```
 

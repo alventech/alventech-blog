@@ -1,10 +1,21 @@
 ---
+weigth: 1
 title: Passwordless Journey
 author: Stein-Erik Alvestad
 date: 2020-11-22T19:03:16+00:00
 url: /passwordless-journey/
 categories:
   - Passwordless
+
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 
 ---
 ### Introduction

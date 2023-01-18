@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: Intune – iOS Company Portal not downloading (user affinity)
 author: Stein-Erik Alvestad
 date: 2019-07-16T19:52:00+00:00
@@ -6,14 +7,24 @@ url: /intune-ios-company-portal-not-downloading-user-affinity/
 categories:
   - intune
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: "seema-miah-32mF78M9GP4-unsplash.png"
+
+toc:
+  auto: false
+
 ---
 
-KEEP
-CALM
-AND
-COMPANY PORTAL
-WILL
-COME
+{{< admonition type=quote title="KEEP CALM AND COMPANY PORTAL WILL COME" open=false >}}
+**quote**
+{{< /admonition >}}
+
+
+
 
 ### Introduction
 
@@ -24,17 +35,19 @@ One of the technical requirements for Intune was to improve security and end-use
 When configuring user enrollment profile for iOS with Intune we have some options to consider. With User affinity or without User affinity.  
 Enroll with User Affinity with CP VPP will use the synced token from Apple DEP and for security, we use Company Portal as an authentication method
 
-![Image](./Setup-Assistant-Customization_0.png)
+
+
+![Image](/wp-content/uploads/2019/07/Setup-Assistant-Customization_0.png)
 
 At the first step, the user gets the Apple MDM profile given with the Setup Assistant. In my example, I just set the location services to minimize the clutter. It was important to not add any restore options because this could be a problem since Apple backup MDM profiles as part of the standard iOS backup. Enrollment is a mess with two MDM profiles if end-user enrolls the same iOS device.
 
-![Image](./Setup-Assistant-Customization_1.png)
+![Image](/wp-content/uploads/2019/07/Setup-Assistant-Customization_1.png)
  
 
 Since the devices are synced with Intune as supervised devices, they should get the CP automatically. So everything now looking good with our enrollment profile, and we are ready for enrollment at scale with all supervised iOS devices that are synced to Intune. We move the devices from the Apple DEP portal to Intune, and verify all devices are synced and have the correct status &#8220;last contacted &#8211; never&#8221;
 
 
-![image](./enrollment_program_token_devices-1024x384.png)
+![image](/wp-content/uploads/2019/07/enrollment_program_token_devices.png)
 
 At this stage we are now ready for End-users starts to factory reset iOS device so that it can get a fresh MDM profile from Intune. The End-users start the enrollment starts and the user gets the MDM profile, however, Company portal is missing. Huh, strange!
 
@@ -42,20 +55,27 @@ At this stage we are now ready for End-users starts to factory reset iOS device 
 
 Time to start troubleshooting. The device is registered in Intune with status &#8220;Not Evaluated&#8221;, the device has also got the last sync status in the Devices status. We verify that we have enough CP VPP licenses. However, the license count in the available licenses does not decrease. We also sync the VPP token once more and verify that the Intune status page looks good.
 
-![image](./Company-Portal-apps-VPP-1-1024x228.png)
+![image](/wp-content/uploads/2019/07/Company-Portal-apps-VPP-1.png)
 
 Checking the Monitor logs, we cannot see any good error codes that we could troubleshoot further. But the Enrollment Page failures are increasing with devices.
 
-![image](./Device-enrollment_monitor.png)
+![image](/wp-content/uploads/2019/07/Device-enrollment_monitor.png)
 
 As some users start to factory reset the devices for the second time, suddenly Company Portal is downloading to the device. Without seeing any errors in Intune we create a ticket with Microsoft providing them with details.
 
 Meanwhile waiting for Microsoft to respond I&#8217;m looking further into the documentation from Microsoft. Looking further into CP VPP, we see that the app license is given to the users that enroll. Since it&#8217;s not any requirement from MS to assign the CP VPP to any Dynamic group it&#8217;s displayed as information &#8220;Assign application to at least one group. Click &#8216;Assignments&#8217; &#8220;, you automatically think something is wrong configured. But looking into the docs, I can see more details about how Intune creates a shadow dynamic group that we never seen in Azure Ad groups. This happens in Intune / Azure AD backend.
 
-This is not easy to find in the Intune documentation, but can be found same can be found with Windows 10 and Autopilot documentation 
-* docs.microsoft.com/en-us/intune/enrollment-autopilot#windows-autopilot-for-existing-devices][1]&#8221; where they also mention DEP in the same documentation. I just quote interesting documentation below:
+This is not easy to find in the Intune documentation, but can be found same can be found with Windows 10 and Autopilot documentation:
 
-**Warning**  
+* docs.microsoft.com/en-us/intune/enrollment-autopilot#windows-autopilot-for-existing-devices
+
+where they also mention DEP in the same documentation.  
+
+
+{{< admonition type=info title="Quote interesting documentation below:" open=true >}}
+{{< /admonition >}}
+
+ 
 Because the correlator ID is not pre-listed in Intune, the device may report any correlator ID they want. If the user creates a correlator ID matching an Autopilot or Apple DEP profile name, the device will be added to any dynamic Azure AD device group based off the enrollmentProfileName attribute. To avoid this conflict:  
 &#8212; Always create dynamic group rules matching against the&nbsp;_entire_&nbsp;enrollmentProfileName value  
 &#8212; Never name Autopilot or Apple DEP profiles beginning with &#8220;OfflineAutopilotprofile-&#8220;.

@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: Intune – MEM – Configure Edge browser for iOS and Android
 author: Stein-Erik Alvestad
 date: 2020-02-23T17:30:00+00:00
@@ -10,6 +11,15 @@ categories:
   - iOS
   - MEM
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 ---
 
 ![image](/wp-content/uploads/2020/02/retried_browser-1024x576.png)

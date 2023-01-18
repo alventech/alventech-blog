@@ -8,6 +8,16 @@ categories:
   - AAD
   - adfs
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
+
 ---
 
 ### Introduction

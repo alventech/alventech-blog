@@ -1,4 +1,5 @@
 ---
+weigth: 1
 title: Troubleshooting Azure Virtual Desktop Monitoring
 author: Stein-Erik Alvestad
 date: 2021-07-20T09:45:41+00:00
@@ -7,6 +8,15 @@ categories:
   - Azure Monitor
   - Azure Virtual Desktop
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 ---
 
 ![image](/wp-content/uploads/2021/07/tobias-tullius-4dKy7d3lkKM-unsplash-1024x680.jpg)

@@ -1,13 +1,22 @@
 ---
+weigth: 1
 title: FEITIAN Contactless reader with FIDO2
 author: Stein-Erik Alvestad
-type: post
 date: 2020-12-21T21:38:38+00:00
 url: /feitian-contactless-reader-with-fido2/
 categories:
   - Feitian
   - Passwordless
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: ""
+
+toc:
+  auto: false
 ---
 ### Introduction
 
