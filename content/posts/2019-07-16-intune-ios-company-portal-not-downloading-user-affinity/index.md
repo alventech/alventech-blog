@@ -72,13 +72,16 @@ This is not easy to find in the Intune documentation, but can be found same can 
 where they also mention DEP in the same documentation.  
 
 
-{{< admonition type=info title="Quote interesting documentation below:" open=true >}}
+{{< admonition type=info title="Microsoft documentation below:" open=true >}}
 {{< /admonition >}}
 
- 
+---
+
 Because the correlator ID is not pre-listed in Intune, the device may report any correlator ID they want. If the user creates a correlator ID matching an Autopilot or Apple DEP profile name, the device will be added to any dynamic Azure AD device group based off the enrollmentProfileName attribute. To avoid this conflict:  
 &#8212; Always create dynamic group rules matching against the&nbsp;_entire_&nbsp;enrollmentProfileName value  
 &#8212; Never name Autopilot or Apple DEP profiles beginning with &#8220;OfflineAutopilotprofile-&#8220;.
+
+---
 
 The part about DEP did not reflect our environment, but the process gives some information about the logical part of the assignment.
 

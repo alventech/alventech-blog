@@ -12,7 +12,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "mitchellluoFWoqldWlNQunsplash.jpg"
 
 toc:
   auto: false

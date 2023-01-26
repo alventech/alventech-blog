@@ -29,9 +29,7 @@ toc:
 {{< /admonition >}}
     
 
-{{< script >}}
-console.log('Hello LoveIt!');
-{{< /script >}}
+
 
 Lately, I have had a compelling problem with Azure Virtual Desktop where a customer had problems with scaling a Line of business application (LOB) as a published application. Text, icons, and fonts became blurry, especially for users who only used laptops as the primary screen, and changing back and forth between primary and secondary screens with different resolutions & screen scaling. 
 

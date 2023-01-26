@@ -7,6 +7,16 @@ categories:
   - AAD
   - AD Connect
 
+lightgallery: true
+
+images: []
+resources:
+- name: "featured-image"
+  src: "mitchellluoFWoqldWlNQunsplash.jpg"
+
+toc:
+  auto: false
+
 ---
 ### Introduction
 

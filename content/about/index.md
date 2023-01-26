@@ -36,7 +36,3 @@ ping me on Linkedin or twitter
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stein-erik-alvestad-71698530/)
 
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/salvestad/)
-
-{{< admonition type=quote title="This is a tip" open=false >}}
-A **quote** banner
-{{< /admonition >}}
