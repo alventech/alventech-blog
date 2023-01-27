@@ -12,7 +12,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "mitchellluoFWoqldWlNQunsplash.jpg"
+  src: "DALLEstacked.png"
 
 toc:
   auto: false

@@ -12,7 +12,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "Yubico.png"
 
 toc:
   auto: false

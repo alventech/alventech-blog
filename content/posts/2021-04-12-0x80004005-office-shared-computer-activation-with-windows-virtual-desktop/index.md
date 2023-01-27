@@ -13,7 +13,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "DALLE-mechanicalkeyboard.png"
 
 toc:
   auto: false

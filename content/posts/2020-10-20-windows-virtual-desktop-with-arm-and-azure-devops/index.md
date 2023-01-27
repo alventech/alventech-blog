@@ -15,7 +15,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "t-k-9AxFJaNySB8-unsplash.jpg"
 
 toc:
   auto: false
@@ -141,11 +141,18 @@ The &#8220;**customImageId**&#8221; SIG can be found in the azure portal as well
 
 ![image](/wp-content/uploads/2020/10/image-9-1024x500.png)
 
+{{< gist alventech 2e0994dcf025a055d9534d6039dc3e9d >}}
+
+
 With the Parameter &#8220;**vmCustomImageSourceId**&#8220;, we also need to add SIG resoruce ID to this value
+
+{{< gist alventech 222e42f69281c2ed1716ec5a6ab558e7 >}}
 
 #### PowerShell Task ExpirationTime
 
 When we have all the parameter&#8217;s updated, we ready to add the PowerShell task. The Task is used to generate the parameter value for &#8220;**tokenExpirationTime**&#8220;. The PowerShell task will store the variable to the next DevOps ARM Task. The Script will run &#8220;**get-date**&#8221; with correct format. The write-host will bring the variable to the next task. 
+
+{{< gist alventech a80d1c5be5cabfef30e46cef27f6754c >}}
 
 ![image](/wp-content/uploads/2020/10/image-18-1024x342.png)
 
@@ -181,26 +188,26 @@ In the **Override template parameters**, we will set
 ![image](/wp-content/uploads/2020/10/image-23.png
 )
 
-### Pipeline_Variables_-_override_even_more_parameters
+### Pipeline Variables - override "more" parameters
 
 if you don&#8217;t like working with the &#8220;**CreateAndProvisionHostPool.paramters.json**&#8220;, you can just override even more parameters for example &#8220;**ouPath**&#8221; and &#8220;**administratorAccountUsername**&#8221; that you down want to be coded in the parameter json. I will recommend choosing Variables &#8211; Pipeline Variables and variables to match your needs.
 
-![image](/wp-content/uploads/2020/10/image-28-1024x251.png)
+![image](/wp-content/uploads/2020/10/image-28.png)
 
 you **must** remember to override it the arm template as well! 
 
-![image](/wp-content/uploads/2020/10/image-30-1024x115.png)
+![image](/wp-content/uploads/2020/10/image-30.png)
 
 ### Create a new release and Deploy
 
 If you&#8217;re done with updating all the parameters, we should be ready for a release. **Create release** and **deploy.** 
 
-![image](/wp-content/uploads/2020/10/image-25-1024x404.png)
+![image](/wp-content/uploads/2020/10/image-25.png)
 
 
 In the logs you can see that the Agent has finalized the job. Go to the troubleshooting guide at the end if you get any problems. 
 
-![image](/wp-content/uploads/2020/10/image-26-1024x484.png)
+![image](/wp-content/uploads/2020/10/image-26.png)
 
 ### Pipeline Add Virtual Machines To HostPool
 
@@ -217,6 +224,8 @@ This will ensure that we have a valid token, or generate a new if token has expi
   
   
 To get stated I will add the &#8220;Azure PowerShell&#8221; 
+
+{{< gist alventech c42d10c011387c2296db949cffdff3e1 >}}
 
 ![image](/wp-content/uploads/2020/10/image-36.png)
 
@@ -236,17 +245,17 @@ Add your **Template** and **Template parameters**, and **Override template param
 
 
 
-### ARM_Template_Deployment_Task_-_AddVmsToHoostPool
+### ARM Template Deployment Task - AddVmsToHoostPool
 
 ![image](/wp-content/uploads/2020/11/image-1024x219.png)
 
-### Link_Variable_group_to_pipeline
+### Link Variable group to pipeline
 
 The last part of the pipeline is to link the variable group, so that pipeline can use the Key Vault credentials authorized to the DevOps Project earlier. 
 
 ![image](/wp-content/uploads/2020/10/image-39-1024x293.png)
 
-### Create_a_new_release_and_Deploy-2"></span>Create a new release and Deploy
+### Create a new release and Deploy
 
 ![image](/wp-content/uploads/2020/10/image-40-1024x343.png)
 
@@ -264,10 +273,11 @@ Another example the passsword that did not work. A closer look to the varaible g
 
 ![image](/wp-content/uploads/2020/10/image-34.png)
 
-Spaces in DevOps task Varaible with * https://gist.github.com/alventech/a80d1c5be5cabfef30e46cef27f6754c createtokenExpirationTime.ps1
-
 **Update** 02.06.2021 (thnx to one of my readers Ben! We found that I had a bug with spaces in the Gist Github file!) this file has been updated so that the variable with ExpirationTime will be correct ). If you copied the code prior to 02.06.2021 the variable would cause a space to be generated which could cause some issues with the parameter input.  
 I&#8217;ve also updated the task.setvariable that was wrong in github and gist github.
+
+"Spaces" in DevOps task Varaible with createtokenExpirationTime.ps1
+* https://gist.github.com/alventech/a80d1c5be5cabfef30e46cef27f6754c 
 
 ### Summary
 

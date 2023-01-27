@@ -13,14 +13,11 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "tobias-tullius-4dKy7d3lkKM-unsplash.jpg"
 
 toc:
   auto: false
 ---
-
-![image](/wp-content/uploads/2021/07/tobias-tullius-4dKy7d3lkKM-unsplash-1024x680.jpg)
-
 
 
 ### Introduction

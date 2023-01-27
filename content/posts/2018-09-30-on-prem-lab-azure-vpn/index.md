@@ -15,7 +15,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "Azure_s2s_VPN.png"
+  src: "isis-franca-AuWSzM7kZDA-unsplash.jpg"
 
 toc:
   auto: false
@@ -42,9 +42,10 @@ Check the latest documentation on Azure vpn gateways if you would like to go int
 In regards to having only dynamic IP at my Homelab, we can automate this task using Azure Automation
 I’m using the script from http://www.deployazure.com/management/automation/azure-automation-update-vpn-local-network-gateway/
 
-in the picture above, I have created a generic design to show the connection from on-prem to Azure or AWS.
+in the picture below, I have created a generic design to show the connection from on-prem to Azure or AWS.
 For the purpose of this specific guide, I will only show how to connect to Azure. Will cover AWS in another guide 🙂
 
+![image](Azure_s2s_VPN.png)
 
 # Steps
 

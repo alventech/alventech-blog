@@ -12,13 +12,11 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "michael-maasen-AkYGy_ymFqo-unsplash.jpg"
 
 toc:
   auto: false
 ---
-
-![image](/wp-content/uploads/2021/07/michael-maasen-AkYGy_ymFqo-unsplash-1024x660.jpg)
 
 
 

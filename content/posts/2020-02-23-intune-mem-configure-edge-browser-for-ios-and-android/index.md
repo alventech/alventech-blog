@@ -16,14 +16,13 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "retried_browser.png"
 
 toc:
   auto: false
 ---
 
-![image](/wp-content/uploads/2020/02/retried_browser-1024x576.png)
-
+### Introduction
 
 It's Time to Move to EDGE Mobile! 
  

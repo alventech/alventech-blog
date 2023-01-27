@@ -14,12 +14,13 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "202211211511076827.jpg"
 
 toc:
   auto: false
 
 ---
+### Introduction
 
 I have gotten some new FIDO keys from FEITIAN, and have done some testing to see how they work with Azure AD and Passwordless.  
 So this Blogpost is more like the following up series, from the last post 
@@ -41,7 +42,9 @@ The full FIDO specification is available:
 
 Unboxing the FEITIAN FIDO2 Bundle (K33 + K27 + K26), First impressions are premium, the build quality feels good.
 
-![image](./20190815_143348445_iOS-2.jpg)
+![image](/wp-content/uploads/2019/08/20190815_143348445_iOS-2.jpg)
+
+
 
 ### Configure K33 with Windows 10
 
@@ -56,7 +59,9 @@ Now go to https://myprofile.microsoft.com and add your FIDO Security Key.
 
 I captured a video to showcase the FEITIAN K33&nbsp; work with Windows 10 version 1903
 
-## Azure AD Key Restriction Policy
+{{< youtube fNkRUw8YYwE >}}
+
+### Azure AD Key Restriction Policy
 
 Given the fact that there are other FIDO providers, it&#8217;s important to consider your trust, and think about what keys your organization will support.  
 Azure AD will support this feature using the KEY Restriction Policy. This is done with Authenticator Attestation GUID (AAGUID).
@@ -64,12 +69,9 @@ Azure AD will support this feature using the KEY Restriction Policy. This is don
 Read more about AAGUID, that&#8217;s well-done documented  
 * https://fidoalliance.org/specs/fido-v2.0-rd-20180702/fido-metadata-statement-v2.0-rd-20180702.html
 
-![image](./KeyRestrictionFIDO-1.png)
-
+![image](/wp-content/uploads/2019/08/KeyRestrictionFIDO-1.png)
 
 Use Coupon CODE Stein-20 when you buy, this will support my channel and give you some discount! 🙂 You can buy FEITIAN products at 
-
-* https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa0tMVE1VU0piUzlFNzRKbktJendiWW1NN1NWd3xBQ3Jtc0treU9ncEx5UFRvbEtISWU2RUVGVGRObkpEeGkxNU41OFNyQURacmx2XzBQV2JMWWVvRnRTUDZ1dkpXWFcwdFZ2bktDNE1Udm5Edkg5d1pOQTlZYjhRb05BSlB3cnZJNWlzdVRrbm5UQTZ5OGp1LTZtTQ&q=https%3A%2F%2Fwww.ftsafe.com%2Fstore%2F"
 
 https://www.ftsafe.com/store/
 

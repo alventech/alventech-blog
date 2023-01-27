@@ -12,14 +12,13 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "DALLEcloud.png"
 
 toc:
   auto: false
 
 ---
 
-![image](/wp-content/uploads/2021/12/image-4.png)
 
 
 ### Introduction
@@ -32,10 +31,13 @@ The documentation Packer is really good, so I will basically just follow along w
 
 During this post, we will bring the JSON template and upgrade it. I will also try to improve the template since HCL gives us better options to document annotations. 
 
-### Getting_started
+### Getting started
+
+![image](/wp-content/uploads/2021/12/image-4.png)
 
 I&#8217;ve got an existing JSON file from GitHub below
 
+{{< gist alventech 2b9a596a27bebd35e38a5edc865ad1b6 >}}
 
 from my terminal I use the command packer hcl2\_upgrade -with-annotations .\Packer\_w10\_20h2\_SIG.json<figure class="wp-block-image size-large">
 
@@ -51,6 +53,8 @@ Time to review the HCL2 Configuration after the upgrade. I opend up the new *..p
 ### Build_the_packer_HCL2_template_in_Azure_DevOps
 
 In Github, I&#8217;ve added the raw configuration from the HCL2 upgrade, but I&#8217;ve changed the variables to my needs. 
+
+{{< gist alventech b20fd1f1fba78dc6f89658e90b2688b6 >}}
 
 I&#8217;m using an Azure CLI task to test the new configuration template. Go back to my old blog /azure-image-builder-or-packer-for-wvd/ if you need more details on how to configure the Azure DevOps Pipeline. 
 

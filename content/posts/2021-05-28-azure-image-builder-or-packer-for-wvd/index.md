@@ -2,7 +2,6 @@
 weigth: 1
 title: Azure Image Builder or Packer for Azure Virtual Desktop
 author: Stein-Erik Alvestad
-type: post
 date: 2021-05-28T19:08:12+00:00
 url: /azure-image-builder-or-packer-for-wvd/
 categories:
@@ -17,14 +16,12 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: ""
+  src: "start_bob_builder.png"
 
 toc:
   auto: false
 ---
 
-![image](/wp-content/uploads/2021/05/start_bob_builder.png
-)
 
 ### Introduction
 
@@ -47,7 +44,7 @@ _20.02.2021 the Azure Image builder Service was announced Generally available, b
 >
 
  
-### Image_Creation_Deployment_High_Level_Design
+### Image Creation Deployment High Level Design
 
 If we look into the high-level design of how we can create and deploy WVD, it could look similar to this process. The building blocks for WVD image creation and image deployment will involve many phases before we have the end product. With help from packer, AIB ,SIG Azure DevOps we have tools to support automation of this process. 
 
@@ -68,7 +65,7 @@ If we look into the high-level design of how we can create and deploy WVD, it co
  10. custom PowerShell extension (example WVD optimization script )
  11. VM added to host pool ready for testing or production. 
 
-### Getting_started_with_Azure_Image_builder_with_Azure_DevOps
+### Getting started with Azure Image builder with Azure DevOps
 
 Following that the AIB is not GA, we are required to register the preview service. Follow this guide from Microsoft to **VirtualMachineTemplatePreview** for the preview. <https://docs.microsoft.com/en-us/azure/virtual-machines/windows/image-builder-powershell#register-features> . _**This step is not required when GA!**_ 
 
@@ -78,11 +75,11 @@ I&#8217;ve already created Managed Identity with permissions and added permissio
 
 When all prerequisites are in place we can start adding the Azure VM Image Builder Test (Preview) in Azure DevOps. You can also use azure cli or powershell task´s. 
 
-### Create_Azure_DevOps_Project
+### Create Azure DevOps Project
 
 The first task is to create a new project in Azure DevOps dev.azure.com. I will do it manually, but you can do this with Terraform if you need to automate this multiple times: <https://techcommunity.microsoft.com/t5/itops-talk-blog/how-to-use-terraform-to-create-azure-devops-projects/ba-p/1555471>. We can use the same project for both pipelines. 
 
-### Add_the_marketplace_task_and_install_the_Marketplace_extension_for_AIB_preview
+### Add the marketplace task and install the Marketplace extension for AIB preview
 
 
 You can grab the Marketplace extension for AIB (preview) from <https://marketplace.visualstudio.com/items?itemName=AzureImageBuilder.devOps-task-for-azure-image-builder>
@@ -91,7 +88,7 @@ You can grab the Marketplace extension for AIB (preview) from <https://marketpla
 
 I&#8217;m using Github as source control. 
 
-### Create_your_pipeline_for_Azure_Image_Builder
+### Create your pipeline for Azure Image Builder
 
 Choose pipelines &#8211; Classic editor and connect your github account and empty job 
 
@@ -139,14 +136,14 @@ You can also check Shared Image Gallery to verify your newly added image from th
 
 The final YAML pipeline will look like these. You can use this to standardize your azure pipeline deployments for CI /CD
 
-### Getting_started_with_Packer_azure-arm_with_Azure_DevOps
+### Getting started with Packer azure-arm with Azure DevOps
 
   
 Many other blogs use the **Build machine image** task to build an immutable image. My problem with the task is that it uses packer version 1.3.4, which is old. I want to use the latest packer version because I want to use the Shared Image Gallery with packer. So to solve this we use Azure CLI or Powershell that use our packer JSON or HCL file, which will be used by the pipeline as input. With Azure CLI or Powershell you should from my experiance always get the latest packer version installed. I will use the JSON template since I&#8217;ve not upgraded my templates to HCL. (upgrading to HCL will be another blog). 
 
 For authentication, I will use a service principle. _NB!_ If you want to use a Managed Identity, you need to create an Azure Virtual Machine that has Managed Identity enabled, and then use this VM to run your build. 
 
-### Variable_group
+### Variable group
 
 The first step is to add Variable Group. All variables that Packer needs are stored here.
 
@@ -162,7 +159,7 @@ Remember to link secrets as key vault variables.
 
 ![image](/wp-content/uploads/2021/05/var_group_2.png)
 
-### Create_your_Azure_DevOps_Pipeline_for_Packer
+### Create your Azure DevOps Pipeline for Packer
 
 Let&#8217;s configure the Pipeline. I&#8217;ve added 2 tasks. Packer validate and Packer build
 
