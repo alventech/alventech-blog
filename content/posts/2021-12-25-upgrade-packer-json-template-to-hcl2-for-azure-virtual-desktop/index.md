@@ -12,14 +12,12 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "DALLEcloud.png"
+  src: "DALLEcloud.webp"
 
 toc:
   auto: false
 
 ---
-
-
 
 ### Introduction
 

@@ -12,7 +12,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "seema-miah-32mF78M9GP4-unsplash.png"
+  src: "seema-miah-32mF78M9GP4-unsplash.webp"
 
 toc:
   auto: false

@@ -17,7 +17,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "markus-winkler-3LVhSjCXRKc-unsplash.jpg"
+  src: "markus-winkler-3LVhSjCXRKc-unsplash.webp"
 
 toc:
   auto: false

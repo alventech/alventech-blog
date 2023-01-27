@@ -12,7 +12,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "michael-maasen-AkYGy_ymFqo-unsplash.jpg"
+  src: "michael-maasen-AkYGy_ymFqo-unsplash.webp"
 
 toc:
   auto: false

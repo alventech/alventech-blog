@@ -13,7 +13,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "DALLEheadinthecloud.png"
+  src: "DALLEheadinthecloud.webp"
 
 toc:
   auto: false
@@ -165,7 +165,6 @@ Looking into Azure AD Audit Logs, we can see our object has status under Target 
 
 
 ### Summary
-
 
 Tools are of course not enough by itself to complete migration away from AD FS. However, the Application Insights and Staged Rollout are nice features when working with lager environments with multiple integrations, and need to verify that everything is working perfectly! I am pretty sure the Application Insight will improve more in Q1 2020, and it will be interesting to see features being improved. Using Staged Rollout to verify that our switch to PHS is working correctly is a welcome addition that I have been missing for years. Much better than big bang migrations! 
 

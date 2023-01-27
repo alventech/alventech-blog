@@ -12,7 +12,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "victor-serban-ZFN6UNWhstI-unsplash.jpg"
+  src: "victor-serban-ZFN6UNWhstI-unsplash.webp"
 
 toc:
   auto: false

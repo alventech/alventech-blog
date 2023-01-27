@@ -12,7 +12,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "DALLEstacked.png"
+  src: "DALLEstacked.webp"
 
 toc:
   auto: false

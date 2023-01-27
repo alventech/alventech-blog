@@ -13,7 +13,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "tobias-tullius-4dKy7d3lkKM-unsplash.jpg"
+  src: "tobias-tullius-4dKy7d3lkKM-unsplash.webp"
 
 toc:
   auto: false

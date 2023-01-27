@@ -12,7 +12,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "mathew-schwartz-DUPITwoxXJE-unsplash.jpg"
+  src: "mathew-schwartz-DUPITwoxXJE-unsplash.webp"
 
 toc:
   auto: false

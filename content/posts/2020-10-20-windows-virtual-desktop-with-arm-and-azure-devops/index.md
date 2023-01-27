@@ -15,7 +15,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "t-k-9AxFJaNySB8-unsplash.jpg"
+  src: "t-k-9AxFJaNySB8-unsplash.webp"
 
 toc:
   auto: false

@@ -12,7 +12,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "DALLE-ticket.png"
+  src: "DALLE-ticket.webp"
 
 toc:
   auto: false
