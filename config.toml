@@ -7,8 +7,6 @@ theme = "LoveIt"
 enableEmoji = true
 # website title
 
-#disqus
-disqusShortname = 'alven-tech'
 # language code ["en", "zh-CN", "fr", "pl", ...]
 
 # language name ["English", "简体中文", "Français", "Polski", ...]
