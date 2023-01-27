@@ -15,7 +15,7 @@ lightgallery: true
 images: []
 resources:
 - name: "featured-image"
-  src: "isis-franca-AuWSzM7kZDA-unsplash.jpg"
+  src: "isis-franca-AuWSzM7kZDA-unsplash.webp"
 
 toc:
   auto: false
