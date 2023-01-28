@@ -43,7 +43,7 @@ And Since GDI DPI GPO did not apply for the LOB. The next step was to look into 
 
 Comparing this with nr 3 explorer.exe and nr 4 msedge.exe (Per-Monitor Aware) that was also published as applications as well, I could see that our option nr 2 LOB.exe was not having any option for DPI Awareness, and that&#8217;s why GDI DPI did not apply either. 
 
-### Overview_Client_Scaling_and_RDP_Properties
+### Overview Client Scaling and RDP Properties
 
 So without doing any big changes to the code in the application, I started playing with RDP Properties in AVD to see if we could make the scaling better. We did use both Windows desktop and Microsoft Store client apps. 
 

@@ -32,6 +32,25 @@ To read the entire specification I will also recommend reading the **documentati
 
 Concerning the initial table, I&#8217;ve additionally explained how you can automate AIB and packer (azure-arm) with Azure DevOps using the marketplace extensions. You do not need to use these, you could also just interact with Azure CLI, etc. My goal is just to show a quick proof of concept with Windows 10 multisession image. Both examples distribute images to SIG.  
 
+|Description |Packer (azure-arm)|AIB (azure image builder)|
+|-----|--------|---|
+|Managed by|HashiCorp       |"Microsoft" ( with HasiCorp Packer under the hood) |
+|Azure RBAC role  | Service Principal | Managed Identity |
+| Azure Resource Group |   Provision resources to the default resource group from packer or existing resource group |  Provision resources to the default resource group from packer or existing resource group                 |
+| Distribute           | Shared Image GalleryManagedImage,VHD             |       Shared Image GalleryManagedImage,VHD           |
+| Communicators (windows) - Packer create certificate only valid 24-hours from invocation time. Uploaded to KeyVault |  winrm            | winrm                 |
+|  Provisioner          |    Powershell, chef, ansible, puppet , DSC          |    Powershell              |
+| Region                | All Azure regions |  https://learn.microsoft.com/en-us/azure/virtual-machines/image-builder-overview?tabs=azure-powershell#regions    | 
+| Hyper-V Generation (images) https://docs.microsoft.com/en-us/azure/virtual-machines/generation-2  | gen1 and gen 2 |  gen1 and gen 2 (roadmap)  |
+| Azure DevOps / Infra as Code | Packer task / Build Image task (1.3.4) / Azure CLI and Powershell (1.7.*) | Azure VM Image Builder Task (preview), Azure CLI and Powershell (1.7.*) |
+| Security  | VNET (default or existing) , NSG (restricted ports) , KeyVault (certificate and secrets) | VNET (default or existing) , NSG (restricted ports), KeyVault (certificate and secrets) |
+| Packer.exe | Need to download the latest packer version or specify an older version | Do not have any direct interaction with Packer. Everything goes through the azure image builder service that again uses packer under the hood |
+| Configuration syntax | JSON or HCL (preferred from 1.7.0) | JSON |
+| Logging | Packer logs are stored in storageaccount | Packer logs are stored in storageaccount |
+
+
+
+
 
 _20.02.2021 the Azure Image builder Service was announced Generally available, but Microsoft suddenly apologized to the publication and pulled the GA status. I do not think it far away, and we could probably still expect it to hit GA Q2 or Q3 in 2021._  
 
@@ -222,7 +241,7 @@ AIB could maybe be the solution if you seek a lighter way to rapidly adapt and d
   
 The first time I used packer was related automation images to my home lab with VMware ESXi. Packer has multiple Builders for all the big players &#8211; https://www.packer.io/docs/builders. Using the Azure provider is generally different than using the VMware provider. But If you are familiar with packer, the adaption to the Builder for Azure (azure-arm) is pretty seamless. However, as listed in the table above there are also many motives why you may want to go the packer route. With the table above you can see that Packer provides the best granular and flexible control over the azure environment, you are managing. You can control &#8220;everything&#8221;. But looking back to AIB we do not need to think about specifying the packer version. I&#8217;ve encountered different errors if I&#8217;ve used an older version of packer. Some of my experience with Packer is that if you forget to validate your template or have some wrong variables this can set you back some hours of troubleshooting.  
   
-That&#8217;s it for this time! Good luck with automating your WVD images in whatever way you prefer 🙂  
+That&#8217;s it for this time! Good luck with automating your AVD images in whatever way you prefer 🙂  I had a talk about this blog at AVDtechfest 2021 https://youtu.be/G2g8CVVzZP4?t=15251 and powerpoint deck https://github.com/alventech/talks/tree/main/2021/avdtechfest
 
 
 ### Documentation
