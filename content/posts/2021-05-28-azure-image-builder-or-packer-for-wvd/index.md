@@ -155,6 +155,9 @@ You can also check Shared Image Gallery to verify your newly added image from th
 
 The final YAML pipeline will look like these. You can use this to standardize your azure pipeline deployments for CI /CD
 
+{{< gist alventech ce64a9869ab9bce749f03fa4236d0012 >}}
+
+
 ### Getting started with Packer azure-arm with Azure DevOps
 
   
@@ -184,6 +187,8 @@ Let&#8217;s configure the Pipeline. I&#8217;ve added 2 tasks. Packer validate an
 
 choose pipelines &#8211; Classic editor and connect your github account and empty job as we did in the steps above earlier. 
 
+{{< gist alventech 5a0dd42e2db8943aca9440cb145be947 >}}
+
 ![image](/wp-content/uploads/2021/05/packer_devops_task_overview.png)
 
 ![image](/wp-content/uploads/2021/05/packer_validate_task.png)
@@ -196,7 +201,11 @@ In the Inline Script I will add the build shell script. I&#8217;m adding the var
 
 The Packer template will in summary use variables we have defined. Create Image with windows 10, sysprep VM add it to SIG.
 
+{{< gist alventech ae9bf44ec5752412dafada5a44e0b825 >}}
+
 To fully understand user variables go to https://www.packer.io/docs/templates/legacy\_json\_templates/user-variables
+
+{{< gist alventech 2b9a596a27bebd35e38a5edc865ad1b6 >}}
 
 Link Variable Groups to the Packer pipeline. This is important step. Without adding the Variables the build will fail! 
 
@@ -214,7 +223,7 @@ The YAML pipeline for Packer for setups looks like this.
 
 You can use this to standardize your azure pipeline deployments for CI /CD 
 
-
+{{< gist alventech f3e657427f3a87dba4f9afc7a498acd7 >}}
 
 ### Troubleshooting
 
@@ -241,7 +250,7 @@ AIB could maybe be the solution if you seek a lighter way to rapidly adapt and d
   
 The first time I used packer was related automation images to my home lab with VMware ESXi. Packer has multiple Builders for all the big players &#8211; https://www.packer.io/docs/builders. Using the Azure provider is generally different than using the VMware provider. But If you are familiar with packer, the adaption to the Builder for Azure (azure-arm) is pretty seamless. However, as listed in the table above there are also many motives why you may want to go the packer route. With the table above you can see that Packer provides the best granular and flexible control over the azure environment, you are managing. You can control &#8220;everything&#8221;. But looking back to AIB we do not need to think about specifying the packer version. I&#8217;ve encountered different errors if I&#8217;ve used an older version of packer. Some of my experience with Packer is that if you forget to validate your template or have some wrong variables this can set you back some hours of troubleshooting.  
   
-That&#8217;s it for this time! Good luck with automating your AVD images in whatever way you prefer 🙂  I had a talk about this blog at AVDtechfest 2021 https://youtu.be/G2g8CVVzZP4?t=15251 and powerpoint deck https://github.com/alventech/talks/tree/main/2021/avdtechfest
+That&#8217;s it for this time! Good luck with automating your AVD images in whatever way you prefer 🙂  I had a talk about this blog at AVDTechfest 2021 https://youtu.be/G2g8CVVzZP4?t=15251 and powerpoint deck https://github.com/alventech/talks/tree/main/2021/avdtechfest
 
 
 ### Documentation
