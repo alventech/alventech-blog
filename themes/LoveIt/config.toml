@@ -42,7 +42,7 @@
     [params.header.title]
       # URL of the LOGO
       # LOGO 的 URL
-      logo = "/images/avatar.png"
+      logo = "/images/avatar.webp"
       # title name
       # 标题名称
       name = ""
@@ -519,7 +519,7 @@
       # Publisher info
       # 出版者信息
       [params.page.seo.publisher]
-        name = ""
+        name = "Stein-Erik Alvestad"
         logoUrl = ""
 
   # TypeIt config
