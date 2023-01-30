@@ -66,6 +66,8 @@ After you have saved the settings, it&#8217;s time to test the login from your b
 
 Let&#8217;s also test a login with iOS with an NFC compatible YubiKey
 
+{{< youtube W4Hu_p9x1E8 >}}
+
 ### Summary
 
 It&#8217;s without doubt that configuring 2FA with Bitwarden is straightforward with some simple steps. Just remember! Do not only configure one single YubiKey, that is not good practice.

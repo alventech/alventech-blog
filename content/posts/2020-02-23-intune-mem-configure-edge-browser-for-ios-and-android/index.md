@@ -87,6 +87,9 @@ After adding the EDGE Application to the Policy, we can see that we now have a n
 
 In the video below you can see how the MAM policy is applied and how the browser experience looks when MAM configurations are applied.
 
+{{< youtube wYCTJ5k-OMo >}}
+
+
 #### How does &#8220;_Single sign-on_&#8221; work on EDGE with iOS?  
 
 
