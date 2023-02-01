@@ -8,8 +8,6 @@ description: "About"
 
 ### About
 
-
-
  Stein-Erik is a Sr Cloud Solution Architect @Microsoft in Norway. He is a true believer in Cloud-first and Cloud Cadence and loves helping customers Succeed with the Cloud Journey. His professional background in operations and delivery of applications, servers, and client infrastructure has been important in data center transformation to Cloud. Stein-Erik uses the Cloud Readiness and Microsoft Cloud Adaption Framework to map workloads, and find the correct balance between hybrid, rehost, refactor to IaaS, PaaS, and SaaS. He has comprehensive proficiency in Identity and Security projects using Microsoft Enterprise Mobility + Security enabling customers for Azure AD, Conditional Access, zero trust, Azure AD Privileged Identity, Entitlement management, ATP, MFA, MCAS, Microsoft Endpoint Manager, and Passwordless.
 
 Stein-Erik Alvestad blogs on alven.tech, where his focus is Identity Governance, Azure AD, ADFS, Security, Passwordless, Microsoft Endpoint Manager, M365, and Azure Virtual Desktop
